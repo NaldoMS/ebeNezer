@@ -1,49 +1,35 @@
-@extends('layout.principal')
-
+@extends('layouts.principal')
 @section('conteudo')
     @if(empty($produtos))
-        <div>Você não tem nenhum produto cadastrado.</div>
+        <div class="alert alert-danger">Você não tem nenhum produto cadastrado.</div>
     @else
         <h1>Listagem de produtos</h1>
         <table class="table table-striped table-bordered table-hover">
-            <tr>
-                <th>Nome</th>
-                <th>Valor</th>
-                <th>Descrição</th>
-                <th>Quantidade</th>
-                <th>Detalhes</th>
-                <th>Editar</th>
-                <th>Excluir</th>
-            </tr>
             @foreach ($produtos as $p)
-                <tr class="{{$p->quantidade <= 1 ? 'danger' : '' }}">
+                <tr class="{{$p->quantidade <= 2 ? 'danger' : '' }}">
                     <td> {{$p->nome}} </td>
                     <td> {{$p->valor}} </td>
                     <td> {{$p->descricao}} </td>
                     <td> {{$p->quantidade}} </td>
-                    <td class="text-center">
-                        <a href="{{action('ProdutoController@mostra', $p->id)}}">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </a>
-                    </td>
-                    <td class="text-center">
-                        <a href="{{action('ProdutoController@editar', $p->id)}}">
-                            <span class="glyphicon glyphicon-pencil"></span>
-                        </a>
-                    </td>
-                    <td class="text-center">
-                        <a href="{{action('ProdutoController@remove', $p->id)}}">
-                            <span class="glyphicon glyphicon-trash"></span>
+                    <td>
+                        <a href="/produtos/mostra/{{$p->id}}">
+                            <i class="fa fa-search"></i>
                         </a>
                     </td>
                 </tr>
             @endforeach
         </table>
     @endif
-    <h4><span class="label label-danger pull-right">Um ou menos itens no estoque</span></h4>
+    <h4>
+        <span class="label label-danger pull-right">
+        Um ou menos itens no estoque
+        </span>
+    </h4>
+
     @if(old('nome'))
         <div class="alert alert-success">
-            <strong>Sucesso!</strong>O produto {{ old('nome') }} foi adicionado.
+            <strong>Sucesso!</strong>
+            O produto {{ old('nome') }} foi adicionado.
         </div>
     @endif
 @stop

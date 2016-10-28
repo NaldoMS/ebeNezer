@@ -26,7 +26,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/produtos/editar/{id}', 'ProdutoController@editar');
     Route::post('/produtos/atualiza/{id}', 'ProdutoController@atualiza');
 
-    Route::get('/home', 'HomeController@index');
-    Route::controllers(['auth' => 'Auth\AuthController', 'password' => 'Auth\PasswordController',]);
+    Route::get('home', 'HomeController@index');
     Route::get('/login', 'LoginController@login');
 });
