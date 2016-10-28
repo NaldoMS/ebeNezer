@@ -31,7 +31,7 @@
     </nav>
     @yield('conteudo')
     <footer class="footer">
-        <p>© Estoque Ebe Nézer by Reginaldo Maranhão.</p>
+        <p>© Estoque Ebe Nézer by <a id="perfil" href="https://www.facebook.com/reginaldo.sousa.3517" target="_blank">Reginaldo Maranhão.</a></p>
     </footer>
 </div>
 </body>

@@ -20,3 +20,23 @@ footer.footer {
 footer.footer p {
     padding: 10px;
 }
+
+a#perfil{
+    text-decoration: none;
+    color: #fff;
+}
+
+td.titleTable{
+    font-weight: 800;
+    text-align: center;
+    color: #fff;
+    background-color: #8F9694;
+}
+
+nav.navbar.navbar-default a:hover {
+    color: white;
+}
+
+div.alert-success{
+    margin-top: 5%;
+}

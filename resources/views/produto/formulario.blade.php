@@ -1,5 +1,14 @@
 @extends('layouts.principal')
 @section('conteudo')
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <h1>Novo produto</h1>
     <form action="/produtos/adiciona" method="post">
 
@@ -21,6 +30,6 @@
             <label>Quantidade</label>
             <input type="number" name="quantidade" class="form-control"/>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        <button type="submit" class="btn btn-primary btn-block">Adicionar</button>
     </form>
 @stop

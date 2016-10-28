@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 use App\produto;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\ProdutosRequest;
 use Request;
 class ProdutoController extends Controller {
     public function lista(){
@@ -21,18 +23,22 @@ class ProdutoController extends Controller {
         return view('produto.formulario');
     }
 
-    public function adiciona(){
-        $nome = Request::input('nome');
-        $valor = Request::input('valor');
-        $descricao = Request::input('descricao');
-        $quantidade = Request::input('quantidade');
-        DB::insert('insert into produtos values (null, ?, ?, ?, ?)',
-            array($nome, $valor, $descricao, $quantidade));
-        return redirect('/produtos')->withInput(Request::only('nome'));
+    public function adiciona(ProdutosRequest $request){
+        Produto::create($request->all());
+        return redirect()
+            ->action('ProdutoController@lista')
+            ->withInput(Request::only('nome'));
     }
 
     public function listaJson(){
         $produtos = Produto::all();
         return response()->json($produtos);
+    }
+
+    public function remove($id){
+        $produto = Produto::find($id);
+        $produto->delete();
+        return redirect()
+            ->action('ProdutoController@lista');
     }
 }
