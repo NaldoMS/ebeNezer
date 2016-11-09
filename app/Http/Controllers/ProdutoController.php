@@ -1,10 +1,11 @@
 <?php
 namespace App\Http\Controllers;
-use App\produto;
+use App\Produto;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ProdutosRequest;
 use Request;
+
 class ProdutoController extends Controller {
     public function lista(){
         $produtos = Produto::all();

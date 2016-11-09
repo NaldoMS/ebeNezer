@@ -40,3 +40,29 @@ nav.navbar.navbar-default a:hover {
 div.alert-success{
     margin-top: 5%;
 }
+
+div.container{
+    width: 80%;
+}
+
+@media all and (max-width: 1000px){
+    div.container{
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 767px){
+    div.container{
+        width: 95%;
+    }
+}
+
+@media all and (max-width: 630px){
+    div.container{
+        width: 100%;
+    }
+
+    td.descricao{
+        display: none;
+    }
+}

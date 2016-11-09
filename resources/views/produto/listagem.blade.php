@@ -1,4 +1,5 @@
 @extends('layouts.principal')
+@extends('layouts.app')
 @section('conteudo')
     @if(empty($produtos))
         <div class="alert alert-danger">Você não tem nenhum produto cadastrado.</div>
@@ -17,7 +18,7 @@
                 <tr class="{{$p->quantidade <= 2 ? 'danger' : '' }}">
                     <td> {{$p->nome}} </td>
                     <td> {{$p->valor}} </td>
-                    <td> {{$p->descricao}} </td>
+                    <td class="descricao"> {{$p->descricao}} </td>
                     <td> {{$p->quantidade}} </td>
                     <td>
                         <a href="/produtos/mostra/{{$p->id}}">
