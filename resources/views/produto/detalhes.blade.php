@@ -12,7 +12,7 @@
             <b>Quantidade em estoque:</b> {{ $p->quantidade }}
         </li>
         <li>
-            <b>Valor unitário:</b> R$ {{ $p->valorUni }},00
+            <b>Valor unitário:</b> R$ {{ $p->valorUni }}
         </li>
         <li>
             <b>Itens vendidos:</b> {{ $p->quantidadeVend }}

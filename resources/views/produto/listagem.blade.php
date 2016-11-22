@@ -17,14 +17,14 @@
                 <td class="titleTable">Apagar</td>
             </tr>
             @foreach ($produtos as $p)
-                {{$lucro = ($p->quantidadeVend * $p->valorUni) - $p->valorCompra}}
-                <tr class="{{$p->quantidade <= 2 ? 'danger' : '' }}">
+               <p style="display: none;">{{$lucro = ($p->quantidadeVend * $p->valorUni) - $p->valorCompra}}</p>
+                <tr>
                     <td> {{$p->nome}} </td>
-                    <td> R${{$p->valorCompra}},00 </td>
-                    <td> {{$p->quantidade}} </td>
+                    <td> R${{$p->valorCompra}}</td>
+                    <td class="{{$p->quantidade <= 2 ? 'danger' : '' }}"> {{$p->quantidade}} </td>
                     <td> R${{$p->valorUni}},00 </td>
                     <td> {{$p->quantidadeVend}} </td>
-                    <td class="{{$lucro < 0 ? 'alert-danger' : 'alert-success' }}"> R${{$lucro}},00 </td>
+                    <td class="{{$lucro < 0 ? 'alert-danger' : 'alert-success' }}"> R${{$lucro}}</td>
                     <td>
                         <a href="/produtos/mostra/{{$p->id}}">
                             <i class="fa fa-search"></i>
@@ -41,7 +41,17 @@
     @endif
     <h4>
         <span class="label label-danger pull-right">
-        Um ou menos itens no estoque
+        Quantidade: Um ou menos itens no estoque
+        </span>
+    </h4><br>
+    <h4>
+        <span class="label label-danger pull-right">
+        Lucro: Lucro negativo
+        </span>
+    </h4><br>
+    <h4>
+        <span class="label label-success pull-right">
+        Lucro: Lucro positivo
         </span>
     </h4>
 
