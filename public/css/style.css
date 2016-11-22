@@ -31,6 +31,7 @@ td.titleTable{
     text-align: center;
     color: #fff;
     background-color: #8F9694;
+    width: 100px;
 }
 
 nav.navbar.navbar-default a:hover {

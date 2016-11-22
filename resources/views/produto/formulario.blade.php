@@ -19,16 +19,20 @@
             <input name="nome" class="form-control"/>
         </div>
         <div class="form-group">
-            <label>Descricao</label>
-            <input name="descricao" class="form-control"/>
+            <label>Valor da Compra</label>
+            <input name="valorCompra" class="form-control"/>
         </div>
         <div class="form-group">
-            <label>Valor</label>
-            <input name="valor" class="form-control"/>
+            <label>Valor unitário</label>
+            <input name="valorUni" class="form-control"/>
         </div>
         <div class="form-group">
-            <label>Quantidade</label>
+            <label>Quantidade em estoque</label>
             <input type="number" name="quantidade" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label>Itens vendidos</label>
+            <input type="number" name="quantidadeVend" class="form-control"/>
         </div>
         <button type="submit" class="btn btn-primary btn-block">Adicionar</button>
     </form>
