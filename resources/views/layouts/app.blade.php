@@ -14,6 +14,7 @@
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
+    <script type="text/javascript" src="/js/jquery.maskedinput-1.3.js"></script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),

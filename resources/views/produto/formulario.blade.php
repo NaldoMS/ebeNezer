@@ -10,12 +10,6 @@
         </div>
     @endif
 
-    <script type="text/javascript">
-        $(function(){
-            $(".dinheiro").maskMoney();
-        })
-    </script>
-
     <h1>Novo produto</h1>
     <form action="{{isset($p) ? '/produtos/atualiza/'.$p->id : '/produtos/adiciona'}}" method="post">
 
@@ -27,11 +21,11 @@
         </div>
         <div class="form-group">
             <label>Valor da Compra</label>
-            <input name="valorCompra" class="form-control dinheiro" value="{{isset($p) ? $p->ValorCompra : old('ValorCompra') }}"/>
+            <input name="valorCompra" class="form-control dinheiro" value="{{isset($p) ? $p->valorCompra : old('valorCompra') }}"/>
         </div>
         <div class="form-group">
             <label>Valor unitário</label>
-            <input name="valorUni" class="form-control" value="{{isset($p) ? $p->valorUni : old('valorUni') }}"/>
+            <input name="valorUni" class="form-control dinheiro" value="{{isset($p) ? $p->valorUni : old('valorUni') }}"/>
         </div>
         <div class="form-group">
             <label>Quantidade em estoque</label>
