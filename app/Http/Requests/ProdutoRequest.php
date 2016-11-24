@@ -1,8 +1,8 @@
 <?php
 
-namespace estoque\Http\Requests;
+namespace App\Http\Requests;
 
-use estoque\Http\Requests\Request;
+use App\Http\Requests\Request;
 
 class ProdutoRequest extends Request
 {
@@ -27,7 +27,6 @@ class ProdutoRequest extends Request
             'nome' => 'required|max:100',
             'valorCompra' => 'required|numeric',
             'valorUni' => 'required|numeric',
-            'quantidade' => 'required|numeric',
             'quantidade' => 'required|numeric',
         ];
     }

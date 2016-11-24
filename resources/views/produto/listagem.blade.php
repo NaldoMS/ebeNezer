@@ -13,8 +13,8 @@
                 <td class="titleTable">Valor</td>
                 <td class="titleTable">Vendidos</td>
                 <td class="titleTable">Lucro</td>
-                <td class="titleTable">Visualizar</td>
                 <td class="titleTable">Apagar</td>
+                <td class="titleTable">Editar</td>
             </tr>
             @foreach ($produtos as $p)
                <p style="display: none;">{{$lucro = ($p->quantidadeVend * $p->valorUni) - $p->valorCompra}}</p>
@@ -22,17 +22,17 @@
                     <td> {{$p->nome}} </td>
                     <td> R${{$p->valorCompra}}</td>
                     <td class="{{$p->quantidade <= 2 ? 'danger' : '' }}"> {{$p->quantidade}} </td>
-                    <td> R${{$p->valorUni}},00 </td>
+                    <td> R${{$p->valorUni}}</td>
                     <td> {{$p->quantidadeVend}} </td>
                     <td class="{{$lucro < 0 ? 'alert-danger' : 'alert-success' }}"> R${{$lucro}}</td>
                     <td>
-                        <a href="/produtos/mostra/{{$p->id}}">
-                            <i class="fa fa-search"></i>
+                        <a href="{{action('ProdutoController@remove', $p->id)}}">
+                            <i class="fa fa-trash"></i>
                         </a>
                     </td>
                     <td>
-                        <a href="{{action('ProdutoController@remove', $p->id)}}">
-                            <i class="fa fa-trash"></i>
+                        <a href="/produtos/editar/{{$p->id}}">
+                            <i class="fa fa-edit"></i>
                         </a>
                     </td>
                 </tr>
